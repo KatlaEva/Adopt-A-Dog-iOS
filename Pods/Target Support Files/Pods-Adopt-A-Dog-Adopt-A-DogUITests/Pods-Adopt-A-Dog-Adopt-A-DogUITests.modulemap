@@ -1,0 +1,6 @@
+framework module Pods_Adopt_A_Dog_Adopt_A_DogUITests {
+  umbrella header "Pods-Adopt-A-Dog-Adopt-A-DogUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
