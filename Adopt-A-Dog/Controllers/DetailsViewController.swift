@@ -31,12 +31,12 @@ class DetailsViewController: UIViewController {
         this.addTarget(self, action: #selector(favoritesTapped), for: .touchUpInside)
         return this
     }()
-    
+
     @objc
     func favoritesTapped() {
-        let favVC = FavoritesViewController()
-        favVC.handleFavorites(dog: dog)
-    
+        print("it works!!")
+        handleFavorites()
+
     }
     
     let stackViewHorizontal: UIStackView = {
@@ -149,14 +149,15 @@ class DetailsViewController: UIViewController {
         ])
     }
     
+    func handleFavorites() {
+        print(dog.dogName)
+    }
+    
     func configureNavBar() {
         let navBar = UINavigationBar()
         navBar.barTintColor = Color.lightGreen()
         let backButton = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector(backToHomeVC))
         navigationItem.leftBarButtonItem = backButton
-       
-        
-        
     }
     
     @objc

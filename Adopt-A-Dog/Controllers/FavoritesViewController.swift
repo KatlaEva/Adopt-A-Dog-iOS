@@ -27,16 +27,16 @@ class FavoritesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
  
-    func handleFavorites(dog: Dog) {
-        let detailsVC = DetailsViewController(dog: dog)
-        
-
-        if dog.hasFavorited == true {
-            detailsVC.favoritesButton.setImage(#imageLiteral(resourceName: "favoritesPink"), for: .normal)
-            favoriteDogs.append(dog)
-        }else {
-            detailsVC.favoritesButton.setImage(#imageLiteral(resourceName: "favorites32"), for: .normal)
-        }
-        
-    }
+//    func handleFavorites(dog: Dog) {
+//        let dogCell = DogCell()
+//        
+//
+//        if dog.hasFavorited == true {
+//            dogCell.heartButton.setImage(#imageLiteral(resourceName: "favoritesPink"), for: .normal)
+//            favoriteDogs.append(dog)
+//        }else {
+//            dogCell.heartButton.setImage(#imageLiteral(resourceName: "favorites32"), for: .normal)
+//        }
+//        
+//    }
 }

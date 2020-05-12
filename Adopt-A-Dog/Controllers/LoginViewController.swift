@@ -167,10 +167,10 @@ class LoginViewController: UIViewController {
     }
     
     func transitionToHome(){
-        let homeVC = MainTabBarViewController()
-        view.window?.rootViewController = homeVC
-        homeVC.modalPresentationStyle = .fullScreen
-        self.present(homeVC, animated: true, completion: nil)
+        let mainTabVC = MainTabBarViewController()
+        view.window?.rootViewController = mainTabVC
+        mainTabVC.modalPresentationStyle = .fullScreen
+        self.present(mainTabVC, animated: true, completion: nil)
 
         
         

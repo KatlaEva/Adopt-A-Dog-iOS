@@ -35,6 +35,7 @@
 		7F88D5DF2456EAD8003FBFCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F88D5DE2456EAD8003FBFCE /* GoogleService-Info.plist */; };
 		7F88D5E524614913003FBFCE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88D5E424614913003FBFCE /* Fonts.swift */; };
 		7F99C2ACD63A559A457266F4 /* Pods_Adopt_A_DogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF33D18745E8384086D4FB1 /* Pods_Adopt_A_DogTests.framework */; };
+		7FEC21DE246B162100B68923 /* MyDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC21DD246B162100B68923 /* MyDogsViewController.swift */; };
 		7FEFFDE2246151C8009EA55B /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFFDE1246151C8009EA55B /* Identifiers.swift */; };
 		7FEFFDE524615512009EA55B /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFFDE424615512009EA55B /* CustomDesign.swift */; };
 		7FEFFDE7246170B1009EA55B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFFDE6246170B1009EA55B /* Extensions.swift */; };
@@ -95,6 +96,7 @@
 		7F88D5D02456D987003FBFCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F88D5DE2456EAD8003FBFCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F88D5E424614913003FBFCE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		7FEC21DD246B162100B68923 /* MyDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDogsViewController.swift; sourceTree = "<group>"; };
 		7FEFFDE1246151C8009EA55B /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		7FEFFDE424615512009EA55B /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		7FEFFDE6246170B1009EA55B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				7F15C2222463F380009619A2 /* FavoritesViewController.swift */,
 				7F15C2242463F392009619A2 /* MyAccountViewController.swift */,
 				7F15C2262463FB3F009619A2 /* MainTabBarViewController.swift */,
+				7FEC21DD246B162100B68923 /* MyDogsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				7F15C2252463F392009619A2 /* MyAccountViewController.swift in Sources */,
 				7FEFFDEB2461A634009EA55B /* Utilities.swift in Sources */,
 				7F0C906C246A8D0D008E5C03 /* Favorites.swift in Sources */,
+				7FEC21DE246B162100B68923 /* MyDogsViewController.swift in Sources */,
 				7F88D5AC2456D97E003FBFCE /* SceneDelegate.swift in Sources */,
 				7F15C2212463EE93009619A2 /* HomeViewController.swift in Sources */,
 			);

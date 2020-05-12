@@ -10,6 +10,11 @@ import UIKit
 
 class DogCell: UITableViewCell {
     
+    
+    
+    let dog = Dog()
+    
+    
     let cellView: UIView = {
         let this = UIView()
         this.translatesAutoresizingMaskIntoConstraints = false
@@ -59,18 +64,17 @@ class DogCell: UITableViewCell {
         return this
     }()
     
-    let heartButton: UIButton = {
-        let this = UIButton()
-        this.translatesAutoresizingMaskIntoConstraints = false
-        this.setImage(#imageLiteral(resourceName: "favorites32"), for: .normal)
-        this.addTarget(self, action: #selector(handleMarkAsFavorites), for: .touchUpInside)
-        return this
-    }()
-    
-    @objc
-    func handleMarkAsFavorites() {
-        print("marking as favorite")
-    }
+//    let heartButton: UIButton = {
+//        let this = UIButton(type: .system)
+//        this.translatesAutoresizingMaskIntoConstraints = false
+//        this.setImage(#imageLiteral(resourceName: "favorites32"), for: .normal)
+////        this.bringSubviewToFront(this)
+////        this.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+////        this.isUserInteractionEnabled = true
+//        this.addTarget(self, action: #selector(handleMarkAsFavorites), for: .touchUpInside)
+//        return this
+//    }()
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -82,17 +86,23 @@ class DogCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+//    @objc
+//    func handleMarkAsFavorites() {
+//        print("gets called")
+//        let detail = DetailsViewController(dog: self.dog)
+//        detail.handleMarkAsFavorites()
+//    }
+    
     func setView() {
         contentView.backgroundColor = Color.lightGreen()
         contentView.addSubview(cellView)
         cellView.addSubview(dogImage)
         cellView.addSubview(stackView)
+//        cellView.addSubview(heartButton)
+//        contentView.bringSubviewToFront(heartButton)
         stackView.addArrangedSubview(dogName)
         stackView.addArrangedSubview(dogAge)
         stackView.addArrangedSubview(dogRace)
-        cellView.addSubview(heartButton)
-        
-        
     }
     
     func setLayout() {
@@ -113,12 +123,12 @@ class DogCell: UITableViewCell {
             stackView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: dogImage.trailingAnchor, constant: 20),
             stackView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -10),
-            stackView.trailingAnchor.constraint(equalTo: heartButton.leadingAnchor, constant: -10),
+//            stackView.trailingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: -10),
             
-            heartButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            heartButton.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -10),
-            heartButton.heightAnchor.constraint(equalToConstant: 50),
-            heartButton.widthAnchor.constraint(equalTo: heartButton.heightAnchor),
+//            heartButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+//            heartButton.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -10),
+//            heartButton.heightAnchor.constraint(equalToConstant: 50),
+//            heartButton.widthAnchor.constraint(equalTo: heartButton.heightAnchor),
             
         ])
     }

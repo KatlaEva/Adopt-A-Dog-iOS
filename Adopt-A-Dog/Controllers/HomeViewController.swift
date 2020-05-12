@@ -93,9 +93,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let dog = dogs[indexPath.row]
         let detailVC = DetailsViewController(dog: dog)
-        let navVC = UINavigationController(rootViewController: detailVC)
-        navVC.modalPresentationStyle = .fullScreen
-        self.present(navVC, animated: true, completion: nil)
+        modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
