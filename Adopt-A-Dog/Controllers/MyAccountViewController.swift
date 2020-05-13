@@ -10,6 +10,8 @@ import UIKit
 
 class MyAccountViewController: UIViewController {
     
+    var dogs: [Dog] = []
+    
     let topLabel: UILabel = {
         let this = UILabel()
         this.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +65,11 @@ class MyAccountViewController: UIViewController {
         setUpView()
         setUpLayout()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getDogsfromFirebase()
     }
     
     func setUpView() {
@@ -94,6 +101,12 @@ class MyAccountViewController: UIViewController {
             myTalesButton.widthAnchor.constraint(equalToConstant: 300),
         
         ])
+    }
+    
+    func getDogsfromFirebase() {
+        let homeVC = HomeViewController()
+        homeVC.getAllDogs()
+        print("myaccount dog list count: \(self.dogs.count)")
     }
 
 

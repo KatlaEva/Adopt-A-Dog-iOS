@@ -45,12 +45,15 @@ class HomeViewController: UIViewController {
             }else {
                 for field in snapshot!.documents {
                     let dog = Dog()
+                    let currentUserUid = Auth.auth().currentUser?.uid
                     
                     dog.dogName = field["dog_name"]as?String
                     dog.dogAge = field["dog_age"]as?String
                     dog.dogRace = field["dog_race"]as?String
                     dog.dogInfo = field["dog_info"]as?String
-                    dog.hasFavorited = field["has_favorited"]as!Bool
+                    dog.dogId = field["user_ref"]as?String
+                    dog.hasFavorited = field["has_favorited"]as?Bool
+                    dog.dogId = currentUserUid
                     self.dogs.append(dog)
                 }
                 DispatchQueue.main.async {

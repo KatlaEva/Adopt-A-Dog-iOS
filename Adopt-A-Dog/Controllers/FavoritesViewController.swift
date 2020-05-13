@@ -16,7 +16,7 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.purple
+        view.backgroundColor = Color.lightPink()
         for dog in favoriteDogs {
             print(dog)
         }

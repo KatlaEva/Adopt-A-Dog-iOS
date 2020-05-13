@@ -23,6 +23,7 @@
 		7F15C22A2464250E009619A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15C2292464250E009619A2 /* User.swift */; };
 		7F15C22C24642516009619A2 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15C22B24642516009619A2 /* Dog.swift */; };
 		7F15C22E24645524009619A2 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15C22D24645524009619A2 /* DogCell.swift */; };
+		7F35F854246BDE040041895B /* AddDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F35F853246BDE040041895B /* AddDogViewController.swift */; };
 		7F69FC8A08CDE8FC89A77EC8 /* Pods_Adopt_A_Dog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B1EE5ADDD1BA2F99DA1EB /* Pods_Adopt_A_Dog.framework */; };
 		7F88D5AA2456D97E003FBFCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88D5A92456D97E003FBFCE /* AppDelegate.swift */; };
 		7F88D5AC2456D97E003FBFCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88D5AB2456D97E003FBFCE /* SceneDelegate.swift */; };
@@ -79,6 +80,7 @@
 		7F15C2292464250E009619A2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7F15C22B24642516009619A2 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		7F15C22D24645524009619A2 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
+		7F35F853246BDE040041895B /* AddDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogViewController.swift; sourceTree = "<group>"; };
 		7F6518261F960E8B34F1FB27 /* Pods-Adopt-A-DogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adopt-A-DogTests.debug.xcconfig"; path = "Target Support Files/Pods-Adopt-A-DogTests/Pods-Adopt-A-DogTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F88D5A62456D97E003FBFCE /* Adopt-A-Dog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adopt-A-Dog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F88D5A92456D97E003FBFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				7F15C2242463F392009619A2 /* MyAccountViewController.swift */,
 				7F15C2262463FB3F009619A2 /* MainTabBarViewController.swift */,
 				7FEC21DD246B162100B68923 /* MyDogsViewController.swift */,
+				7F35F853246BDE040041895B /* AddDogViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				7FEFFDE924618EF2009EA55B /* SignupViewController.swift in Sources */,
 				7F88D5AE2456D97E003FBFCE /* LoginViewController.swift in Sources */,
 				7F15C22A2464250E009619A2 /* User.swift in Sources */,
+				7F35F854246BDE040041895B /* AddDogViewController.swift in Sources */,
 				7FEFFDE524615512009EA55B /* CustomDesign.swift in Sources */,
 				7F88D5E524614913003FBFCE /* Fonts.swift in Sources */,
 				7FEFFDE7246170B1009EA55B /* Extensions.swift in Sources */,
