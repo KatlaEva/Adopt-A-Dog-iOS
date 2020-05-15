@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
-class Dog {
-    
+struct Dog {
     var dogId: String?
+    var dogUserUid: String?
     var dogName: String?
     var dogAge: String?
     var dogRace: String?
     var dogInfo: String?
     var hasFavorited: Bool?
+    var imageUrl: String?
+    var dogImage: UIImage?
 }

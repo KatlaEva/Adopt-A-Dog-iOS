@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     let tableView = UITableView()
     
     let dogCell = DogCell()
-
+    
     
     
     override func viewDidLoad() {
@@ -33,36 +33,46 @@ class HomeViewController: UIViewController {
     func setView() {
         view.backgroundColor = Color.lightGreen()
         view.addSubview(tableView)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func getAllDogs() {
         let db = Firestore.firestore()
-
+        
         db.collection("dogs").addSnapshotListener { (snapshot, error) in
             self.dogs.removeAll()
             if error != nil {
                 print(error!.localizedDescription)
             }else {
                 for field in snapshot!.documents {
-                    let dog = Dog()
-                    let currentUserUid = Auth.auth().currentUser?.uid
+                    var dog = Dog()
                     
+                    dog.dogId = field["dog_id"]as?String
                     dog.dogName = field["dog_name"]as?String
                     dog.dogAge = field["dog_age"]as?String
                     dog.dogRace = field["dog_race"]as?String
                     dog.dogInfo = field["dog_info"]as?String
-                    dog.dogId = field["user_ref"]as?String
+                    dog.dogUserUid = field["user_ref"]as?String
                     dog.hasFavorited = field["has_favorited"]as?Bool
-                    dog.dogId = currentUserUid
+                    dog.imageUrl = field["meta_image_url"]as?String
+                    
+                    if let url = URL(string: dog.imageUrl ?? "no image url") {
+                        
+                        do{
+                            let data = try Data(contentsOf: url)
+                            dog.dogImage = UIImage(data: data)
+                        }catch let error {
+                            print(error.localizedDescription)
+                        }
+                    }
                     self.dogs.append(dog)
-                }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
                 }
             }
         }
-        
-        
     }
     func configureTableView() {
         self.tableView.backgroundColor = Color.lightGreen()
@@ -82,7 +92,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("dogs count here: \(dogs.count)")
         return dogs.count
-       
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

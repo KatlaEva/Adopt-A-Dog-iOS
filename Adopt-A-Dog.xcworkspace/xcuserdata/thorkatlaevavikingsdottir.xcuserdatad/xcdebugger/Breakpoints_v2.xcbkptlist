@@ -7,118 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AADDE7CD-4DB1-4658-8456-DCBFCF185370"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Adopt-A-Dog/Controllers/MyDogsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "showCurrentUsersDogs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "26D77F81-B3AA-4D6C-BA6C-592DC90C5033"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Adopt-A-Dog/Controllers/MyDogsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "showCurrentUsersDogs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39DAEE26-E69F-4761-8B7E-74F5CA8979C4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Adopt-A-Dog/Controllers/MyDogsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "showCurrentUsersDogs()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "39DAEE26-E69F-4761-8B7E-74F5CA8979C4 - 9d1a85b531a4b8ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Adopt_A_Dog.MyDogsViewController.showCurrentUsersDogs() -&gt; ()"
-                  moduleName = "Adopt-A-Dog"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thorkatlaevavikingsdottir/Desktop/Lokaverkefni_iOS/FinalApp/Adopt-A-Dog/Adopt-A-Dog/Controllers/MyDogsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "2369">
-               </Location>
-               <Location
-                  uuid = "39DAEE26-E69F-4761-8B7E-74F5CA8979C4 - 7f904679efbec9a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Adopt_A_Dog.MyDogsViewController.showCurrentUsersDogs() -&gt; ()"
-                  moduleName = "Adopt-A-Dog"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thorkatlaevavikingsdottir/Desktop/Lokaverkefni_iOS/FinalApp/Adopt-A-Dog/Adopt-A-Dog/Controllers/MyDogsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5FFF26DC-49ED-44F4-8817-6EAB867E04A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Adopt-A-Dog/Controllers/MyDogsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "showCurrentUsersDogs()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5017C58A-41F3-4932-A23D-A574EBBAE492"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Adopt-A-Dog/Controllers/MyAccountViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "910BAFF5-8E9B-451E-AACA-4699AA16C1AF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -128,24 +16,56 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "getDogsfromFirebase()"
-            landmarkType = "7">
+            landmarkName = "MyAccountViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D1AE5ED-BADE-48E6-92BB-52CD11A13E18"
-            shouldBeEnabled = "Yes"
+            uuid = "B54251F9-9567-4C96-A837-0AE6A943F54A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Adopt-A-Dog/Controllers/HomeViewController.swift"
+            filePath = "Adopt-A-Dog/Controllers/MyDogsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getAllDogs()"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B54251F9-9567-4C96-A837-0AE6A943F54A - 6d26a318d496e2f7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Adopt_A_Dog.MyDogsViewController.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Adopt-A-Dog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thorkatlaevavikingsdottir/Desktop/Lokaverkefni_iOS/FinalApp/Adopt-A-Dog/Adopt-A-Dog/Controllers/MyDogsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "548">
+               </Location>
+               <Location
+                  uuid = "B54251F9-9567-4C96-A837-0AE6A943F54A - 45a96af50fe37aab"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Adopt_A_Dog.MyDogsViewController.tableView(_: __C.UITableView, commit: __C.UITableViewCellEditingStyle, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Adopt-A-Dog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thorkatlaevavikingsdottir/Desktop/Lokaverkefni_iOS/FinalApp/Adopt-A-Dog/Adopt-A-Dog/Controllers/MyDogsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "225">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

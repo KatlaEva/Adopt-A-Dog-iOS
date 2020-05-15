@@ -7,9 +7,9 @@ target 'Adopt-A-Dog' do
 
   # Pods for Adopt-A-Dog
 
-pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 
   target 'Adopt-A-DogTests' do
     inherit! :search_paths

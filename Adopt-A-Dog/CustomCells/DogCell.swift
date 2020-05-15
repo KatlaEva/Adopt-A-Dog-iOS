@@ -38,8 +38,7 @@ class DogCell: UITableViewCell {
         let this = UIImageView()
         this.translatesAutoresizingMaskIntoConstraints = false
         this.image = UIImage(named: Image.UploadLogo)
-        this.layer.cornerRadius = 10
-        this.clipsToBounds = true
+        this.layoutSubviews()
         return this
     }()
     
@@ -137,6 +136,7 @@ class DogCell: UITableViewCell {
         dogName.text = "Name: \(dog.dogName ?? "No name")"
         dogAge.text = "Age: \(dog.dogAge ?? "No age")"
         dogRace.text = "Race: \(dog.dogRace ?? "No race")"
+        dogImage.image = dog.dogImage
         
     }
 

@@ -25,6 +25,8 @@ class SignupViewController: UIViewController {
     let logoImage: UIImageView = {
         let this = UIImageView(image: UIImage(named: Image.Logo))
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        this.widthAnchor.constraint(equalTo: this.heightAnchor).isActive = true
         this.layer.shadowOpacity = 0.7
         this.layer.shadowRadius = 10.0
         return this
@@ -33,6 +35,8 @@ class SignupViewController: UIViewController {
     let firstNameTextField: CustomTextFields = {
         let this = CustomTextFields()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
         this.font = UIFont.Font.caviarDreamsItalic(size: 18)
         this.placeholder = "First name"
         return this
@@ -41,6 +45,8 @@ class SignupViewController: UIViewController {
     let lastNameTextField: CustomTextFields = {
         let this = CustomTextFields()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
         this.font = UIFont.Font.caviarDreamsItalic(size: 18)
         this.placeholder = "Last name"
         return this
@@ -49,14 +55,18 @@ class SignupViewController: UIViewController {
     let emailTextField: CustomTextFields = {
         let this = CustomTextFields()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
         this.font = UIFont.Font.caviarDreamsItalic(size: 18)
-        this.placeholder = "Username"
+        this.placeholder = "Email"
         return this
     }()
     
     let passwordTextField: CustomTextFields = {
         let this = CustomTextFields()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
         this.font = UIFont.Font.caviarDreamsItalic(size: 18)
         this.placeholder = "Password"
         return this
@@ -65,8 +75,11 @@ class SignupViewController: UIViewController {
     let errorLabel: UILabel = {
         let this = UILabel()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
         this.alpha = 0
-        this.font = UIFont.Font.caviarDreamsBold(size: 18)
+        this.font = UIFont.Font.caviarDreamsBold(size: 12)
+        this.numberOfLines = 0
         this.textColor = UIColor.red
         return this
     }()
@@ -74,6 +87,8 @@ class SignupViewController: UIViewController {
     let signupButton: UIButton = {
         let this = UIButton()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
         this.setTitle("Signup", for: .normal)
         this.setCorner(radius: 22.5)
         this.backgroundColor = Color.darkGreen()
@@ -86,6 +101,8 @@ class SignupViewController: UIViewController {
     let loginButton: UIButton = {
         let this = UIButton()
         this.translatesAutoresizingMaskIntoConstraints = false
+        this.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        this.widthAnchor.constraint(equalToConstant: 400).isActive = true
         this.setTitle("Allready have an accoung? - Login here!", for: .normal)
         this.titleLabel?.font = UIFont.Font.caviarDreamsBold(size: 16)
         this.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -101,18 +118,36 @@ class SignupViewController: UIViewController {
     }
     @objc
     func signupButtonTapped() {
-        //Validate the fields
-        if PasswordValidation.validateFields(firstNameTextField) ||
-           PasswordValidation.validateFields(lastNameTextField) ||
-           PasswordValidation.validateFields(emailTextField) == false {
-            
-            PasswordValidation.showError(errorLabel, "Pleas fill inn all fields")
-            
-        }else
-            
-            if PasswordValidation.isPasswordValid(passwordTextField.text!) == false {
-                PasswordValidation.showError(errorLabel, "Pleas make sure your password is at least 8 characters, contains a special character and a numer.")
+        guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {
+            return
         }
+        
+        let validFirstName = Validation.isTextFieldValid(firstName)
+        if (validFirstName == false) {
+            Validation.showError(errorLabel, "First name not valid, must be at least to characters")
+            return
+        }
+        let validLastName = Validation.isTextFieldValid(lastName)
+        if (validLastName == false) {
+            Validation.showError(errorLabel, "Last name not valid, must be at least to characters")
+            return
+        }
+        let validEmail = Validation.isEmailValid(email)
+        if (validEmail == false) {
+            Validation.showError(errorLabel, "email not valid")
+            return
+        }
+        let validPassword = Validation.isPasswordValid(password)
+        if (validPassword == false) {
+            Validation.showError(errorLabel, "Pleas make sure your password is at least 8 characters, contains a special character and a numer.")
+            return
+        }
+        
+        if (firstName == "" || lastName == "" || email == "" || password == "") {
+            Validation.showError(errorLabel, "Pleas fill inn all fields")
+            return
+        }
+        
         user.firstName = firstNameTextField.text!
         user.lastName = lastNameTextField.text!
         user.email = emailTextField.text!
@@ -120,7 +155,7 @@ class SignupViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: user.email!, password: user.password!) { (result, error) in
             if error != nil {
-                PasswordValidation.showError(self.errorLabel, "Error creating user")
+                Validation.showError(self.errorLabel, "Error creating user")
             }
             else {
                 let db = Firestore.firestore()
@@ -131,7 +166,7 @@ class SignupViewController: UIViewController {
                         
                         if error != nil {
                             
-                            PasswordValidation.showError(self.errorLabel, "Error saving user")
+                            Validation.showError(self.errorLabel, "Error saving user")
                         }
                 }
                 self.transitionToHome()
@@ -153,7 +188,6 @@ class SignupViewController: UIViewController {
         view.backgroundColor = Color.lightGreen()
         view.addSubview(nameLabel)
         view.addSubview(logoImage)
-//        view.addSubview(noAccountLabel)
         view.addSubview(loginButton)
     }
 
@@ -177,43 +211,20 @@ class SignupViewController: UIViewController {
             
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
-            logoImage.heightAnchor.constraint(equalToConstant: 180),
-            logoImage.widthAnchor.constraint(equalTo: logoImage.heightAnchor),
             
             stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stack.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20),
             
-            firstNameTextField.heightAnchor.constraint(equalToConstant: 45),
-            firstNameTextField.widthAnchor.constraint(equalToConstant: 300),
-            
-            lastNameTextField.heightAnchor.constraint(equalToConstant: 45),
-            lastNameTextField.widthAnchor.constraint(equalToConstant: 300),
-
-            emailTextField.heightAnchor.constraint(equalToConstant: 45),
-            emailTextField.widthAnchor.constraint(equalToConstant: 300),
-
-            passwordTextField.heightAnchor.constraint(equalToConstant: 45),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 300),
-            
-            errorLabel.heightAnchor.constraint(equalToConstant: 30),
-            errorLabel.widthAnchor.constraint(equalToConstant: 300),
-            
-            signupButton.heightAnchor.constraint(equalToConstant: 45),
-            signupButton.widthAnchor.constraint(equalToConstant: 300),
-
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginButton.topAnchor.constraint(equalTo: signupButton.bottomAnchor, constant: 20),
-            loginButton.heightAnchor.constraint(equalToConstant: 30),
-            loginButton.widthAnchor.constraint(equalToConstant: 400)
-        
-            
         ])
     }
     
     func transitionToHome(){
-        let homeVC = MainTabBarViewController()
-        self.present(homeVC, animated: true, completion: nil)
- 
+        let mainTabVC = MainTabBarViewController()
+        view.window?.rootViewController = mainTabVC
+        mainTabVC.modalPresentationStyle = .fullScreen
+        self.present(mainTabVC, animated: true, completion: nil)
     }
     
     func styleElements() {

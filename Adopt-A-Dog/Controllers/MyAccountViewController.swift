@@ -64,12 +64,6 @@ class MyAccountViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         setUpLayout()
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getDogsfromFirebase()
     }
     
     func setUpView() {
@@ -111,3 +105,5 @@ class MyAccountViewController: UIViewController {
 
 
 }
+
+

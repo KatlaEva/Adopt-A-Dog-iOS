@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController {
         let this = UIImageView()
         this.translatesAutoresizingMaskIntoConstraints = false
         this.image = UIImage(named: Image.UploadLogo)
+        this.layoutSubviews()
         return this
     }()
     
@@ -36,7 +37,6 @@ class DetailsViewController: UIViewController {
     func favoritesTapped() {
         print("it works!!")
         handleFavorites()
-
     }
     
     let stackViewHorizontal: UIStackView = {
@@ -107,6 +107,7 @@ class DetailsViewController: UIViewController {
     
     func setupView() {
         view.backgroundColor = Color.lightGreen()
+        self.navigationController?.navigationBar.isHidden = false
         view.addSubview(dogImage)
         view.addSubview(dogNameLabel)
         view.addSubview(favoritesButton)
@@ -155,14 +156,15 @@ class DetailsViewController: UIViewController {
     
     func configureNavBar() {
         let navBar = UINavigationBar()
-        navBar.barTintColor = Color.lightGreen()
+        navBar.backgroundColor = Color.lightGreen()
         let backButton = UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector(backToHomeVC))
         navigationItem.leftBarButtonItem = backButton
     }
     
     @objc
     func backToHomeVC() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     func setDog(dog: Dog) {
@@ -170,5 +172,6 @@ class DetailsViewController: UIViewController {
         dogAgeLabel.text = "Age: \(dog.dogAge ?? "Unknown")"
         dogRaceLabel.text = "Race: \(dog.dogRace ?? "Unknown")"
         moreInfoTextView.text = dog.dogInfo
+        dogImage.image = dog.dogImage
     }
 }
