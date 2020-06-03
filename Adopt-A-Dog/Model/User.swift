@@ -7,12 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
-class User {
-    
+struct User {
+    var userUid: String?
     var firstName: String?
     var lastName: String?
     var email: String?
     var password: String?
     var phoneNr: String?
 }
+    
+
+

@@ -14,7 +14,7 @@ struct Dog {
     var dogUserUid: String?
     var dogName: String?
     var dogAge: String?
-    var dogRace: String?
+    var dogBreed: String?
     var dogInfo: String?
     var hasFavorited: Bool?
     var imageUrl: String?

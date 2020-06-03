@@ -23,5 +23,24 @@ class CustomTextFields: UITextField {
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
+    
+    static func styleTextField(_ textField: UITextField) {
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.setCorner(radius: 22.5)
+        textField.backgroundColor = UIColor.white
+    }
 
 }
+extension UIView {
+    func setCorner(radius: CGFloat) {
+        layer.cornerRadius = radius
+        clipsToBounds = true
+    }
+    func circleCorner() {
+        superview?.layoutIfNeeded()
+        setCorner(radius: frame.height / 2)
+    }
+}
+
+
+
