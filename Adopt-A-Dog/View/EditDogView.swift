@@ -1,15 +1,15 @@
 //
-//  AddDogView.swift
+//  EditDogView.swift
 //  Adopt-A-Dog
 //
-//  Created by Þórkatla Eva Víkingsdóttir on 03/06/2020.
+//  Created by Þórkatla Eva Víkingsdóttir on 15/06/2020.
 //  Copyright © 2020 Þórkatla Eva Víkingsdóttir. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class AddDogView: UIView {
+class EditDogView: UIView {
     
     lazy var contentViewSize = CGSize(width: self.frame.width, height: self.frame.height + 900)
     
@@ -95,12 +95,12 @@ class AddDogView: UIView {
         return this
     }()
     
-    let addDogSaveButton: UIButton = {
+    let editDogButton: UIButton = {
         let this = UIButton()
         this.translatesAutoresizingMaskIntoConstraints = false
         this.heightAnchor.constraint(equalToConstant: 45).isActive = true
         this.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        this.setTitle(Title.save, for: .normal)
+        this.setTitle(Title.edit, for: .normal)
         this.titleLabel?.font = UIFont.Font.caviarDreamsBold(size: 20)
         this.setCorner(radius: 15)
         this.backgroundColor = Color.darkGreen()
@@ -131,7 +131,7 @@ class AddDogView: UIView {
     func setupLayout() {
         
         let stackView: UIStackView = {
-            let this = UIStackView(arrangedSubviews: [dogNameTextField, dogAgeTextField, dogBreedTextField, dogInfoTextField, addDogSaveButton])
+            let this = UIStackView(arrangedSubviews: [dogNameTextField, dogAgeTextField, dogBreedTextField, dogInfoTextField, editDogButton])
             this.translatesAutoresizingMaskIntoConstraints = false
             this.axis = .vertical
             this.alignment = .center
@@ -162,7 +162,7 @@ class AddDogView: UIView {
             chooseImageButton.topAnchor.constraint(equalTo: dogImage.bottomAnchor, constant: 10),
             
             stackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            stackView.topAnchor.constraint(equalTo: chooseImageButton.bottomAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: chooseImageButton.bottomAnchor, constant: 20)
         ])
     }
     
@@ -173,3 +173,4 @@ class AddDogView: UIView {
         CustomTextFields.styleTextField(dogInfoTextField)
     }
 }
+

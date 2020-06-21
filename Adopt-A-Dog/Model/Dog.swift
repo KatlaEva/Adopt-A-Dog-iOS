@@ -19,4 +19,6 @@ struct Dog {
     var hasFavorited: Bool?
     var imageUrl: String?
     var dogImage: UIImage?
+    var isFavorite: Bool = false
 }
+

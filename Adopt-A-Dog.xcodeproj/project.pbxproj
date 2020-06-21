@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C8E30E4A8AB8B1C5DB66B70 /* Pods_Adopt_A_DogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D081E4540DDCBF356F3F847A /* Pods_Adopt_A_DogTests.framework */; };
 		64046595FD96EB144CABAB32 /* Pods_Adopt_A_Dog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73B1EE5ADDD1BA2F99DA1EB /* Pods_Adopt_A_Dog.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7F0C905924695B6C008E5C03 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C905824695B6C008E5C03 /* DetailsViewController.swift */; };
 		7F0C905C246973E3008E5C03 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C905B246973E3008E5C03 /* Colors.swift */; };
@@ -47,28 +46,12 @@
 		7FB4EC252487B9F700BE301E /* ContactInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4EC242487B9F700BE301E /* ContactInformationView.swift */; };
 		7FC1F2BB246D696C00D1762F /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1F2BA246D696C00D1762F /* AlertService.swift */; };
 		7FEC21DE246B162100B68923 /* MyDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC21DD246B162100B68923 /* MyDogsViewController.swift */; };
+		7FEDA75F2497811D00CE371A /* EditDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA75E2497811D00CE371A /* EditDogViewController.swift */; };
+		7FEDA7612497813C00CE371A /* EditDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDA7602497813C00CE371A /* EditDogView.swift */; };
 		7FEFFDE2246151C8009EA55B /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFFDE1246151C8009EA55B /* Identifiers.swift */; };
 		7FEFFDE524615512009EA55B /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFFDE424615512009EA55B /* CustomDesign.swift */; };
 		7FEFFDE924618EF2009EA55B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEFFDE824618EF2009EA55B /* SignupViewController.swift */; };
-		D13E7F60C310B0CBADAD43AD /* Pods_Adopt_A_Dog_Adopt_A_DogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF3F10F934C6179F59B311D /* Pods_Adopt_A_Dog_Adopt_A_DogUITests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7F88D5C02456D987003FBFCE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7F88D59E2456D97E003FBFCE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7F88D5A52456D97E003FBFCE;
-			remoteInfo = "Adopt-A-Dog";
-		};
-		7F88D5CB2456D987003FBFCE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7F88D59E2456D97E003FBFCE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7F88D5A52456D97E003FBFCE;
-			remoteInfo = "Adopt-A-Dog";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0830CE4827FB3FD11CF60BEC /* Pods-Adopt-A-DogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adopt-A-DogTests.release.xcconfig"; path = "Target Support Files/Pods-Adopt-A-DogTests/Pods-Adopt-A-DogTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,8 +87,6 @@
 		7F88D5B52456D987003FBFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F88D5B82456D987003FBFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F88D5BA2456D987003FBFCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F88D5BF2456D987003FBFCE /* Adopt-A-DogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adopt-A-DogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F88D5CA2456D987003FBFCE /* Adopt-A-DogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adopt-A-DogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F88D5DE2456EAD8003FBFCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F88D5E424614913003FBFCE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7F96570A24755D260098B5BB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -118,6 +99,10 @@
 		7FB4EC242487B9F700BE301E /* ContactInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationView.swift; sourceTree = "<group>"; };
 		7FC1F2BA246D696C00D1762F /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		7FEC21DD246B162100B68923 /* MyDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDogsViewController.swift; sourceTree = "<group>"; };
+		7FEDA7562493B1E500CE371A /* Adopt_A_DogTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adopt_A_DogTests2.swift; sourceTree = "<group>"; };
+		7FEDA7582493B1E500CE371A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FEDA75E2497811D00CE371A /* EditDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDogViewController.swift; sourceTree = "<group>"; };
+		7FEDA7602497813C00CE371A /* EditDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDogView.swift; sourceTree = "<group>"; };
 		7FEFFDE1246151C8009EA55B /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		7FEFFDE424615512009EA55B /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		7FEFFDE824618EF2009EA55B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -133,22 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64046595FD96EB144CABAB32 /* Pods_Adopt_A_Dog.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F88D5BC2456D987003FBFCE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C8E30E4A8AB8B1C5DB66B70 /* Pods_Adopt_A_DogTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F88D5C72456D987003FBFCE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D13E7F60C310B0CBADAD43AD /* Pods_Adopt_A_Dog_Adopt_A_DogUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +145,7 @@
 				7FB4EC1E2487A5F200BE301E /* MyDogsView.swift */,
 				7FB4EC222487AAE100BE301E /* AddDogView.swift */,
 				7FB4EC242487B9F700BE301E /* ContactInformationView.swift */,
+				7FEDA7602497813C00CE371A /* EditDogView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +173,7 @@
 				7FEC21DD246B162100B68923 /* MyDogsViewController.swift */,
 				7F35F853246BDE040041895B /* AddDogViewController.swift */,
 				7F52D33C24700A08001A8CDF /* ContactInformationViewController.swift */,
+				7FEDA75E2497811D00CE371A /* EditDogViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -222,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				7F88D5A82456D97E003FBFCE /* Adopt-A-Dog */,
+				7FEDA7552493B1E500CE371A /* Adopt-A-DogTests2 */,
 				7F88D5A72456D97E003FBFCE /* Products */,
 				AE70B133CC76840C4D24F539 /* Pods */,
 				5C1F4E30B2108BFE29C94490 /* Frameworks */,
@@ -232,8 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				7F88D5A62456D97E003FBFCE /* Adopt-A-Dog.app */,
-				7F88D5BF2456D987003FBFCE /* Adopt-A-DogTests.xctest */,
-				7F88D5CA2456D987003FBFCE /* Adopt-A-DogUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,6 +248,15 @@
 				7F0C90692469D294008E5C03 /* CaviarDreams_Italic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7FEDA7552493B1E500CE371A /* Adopt-A-DogTests2 */ = {
+			isa = PBXGroup;
+			children = (
+				7FEDA7562493B1E500CE371A /* Adopt_A_DogTests2.swift */,
+				7FEDA7582493B1E500CE371A /* Info.plist */,
+			);
+			path = "Adopt-A-DogTests2";
 			sourceTree = "<group>";
 		};
 		7FEFFDE3246154F1009EA55B /* CustomDesign */ = {
@@ -325,65 +304,18 @@
 			productReference = 7F88D5A62456D97E003FBFCE /* Adopt-A-Dog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7F88D5BE2456D987003FBFCE /* Adopt-A-DogTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F88D5D62456D987003FBFCE /* Build configuration list for PBXNativeTarget "Adopt-A-DogTests" */;
-			buildPhases = (
-				9060ADDFBB41ACF6D26E0DBB /* [CP] Check Pods Manifest.lock */,
-				7F88D5BB2456D987003FBFCE /* Sources */,
-				7F88D5BC2456D987003FBFCE /* Frameworks */,
-				7F88D5BD2456D987003FBFCE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7F88D5C12456D987003FBFCE /* PBXTargetDependency */,
-			);
-			name = "Adopt-A-DogTests";
-			productName = "Adopt-A-DogTests";
-			productReference = 7F88D5BF2456D987003FBFCE /* Adopt-A-DogTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		7F88D5C92456D987003FBFCE /* Adopt-A-DogUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F88D5D92456D987003FBFCE /* Build configuration list for PBXNativeTarget "Adopt-A-DogUITests" */;
-			buildPhases = (
-				B88D964D169748C6656B7561 /* [CP] Check Pods Manifest.lock */,
-				7F88D5C62456D987003FBFCE /* Sources */,
-				7F88D5C72456D987003FBFCE /* Frameworks */,
-				7F88D5C82456D987003FBFCE /* Resources */,
-				8034F2D6C3D86BAF80DFC1C4 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7F88D5CC2456D987003FBFCE /* PBXTargetDependency */,
-			);
-			name = "Adopt-A-DogUITests";
-			productName = "Adopt-A-DogUITests";
-			productReference = 7F88D5CA2456D987003FBFCE /* Adopt-A-DogUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7F88D59E2456D97E003FBFCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Þórkatla Eva Víkingsdóttir";
 				TargetAttributes = {
 					7F88D5A52456D97E003FBFCE = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					7F88D5BE2456D987003FBFCE = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 7F88D5A52456D97E003FBFCE;
-					};
-					7F88D5C92456D987003FBFCE = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 7F88D5A52456D97E003FBFCE;
 					};
 				};
 			};
@@ -401,8 +333,6 @@
 			projectRoot = "";
 			targets = (
 				7F88D5A52456D97E003FBFCE /* Adopt-A-Dog */,
-				7F88D5BE2456D987003FBFCE /* Adopt-A-DogTests */,
-				7F88D5C92456D987003FBFCE /* Adopt-A-DogUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,20 +350,6 @@
 				7F0C90662469D279008E5C03 /* CaviarDreams_Bold.ttf in Resources */,
 				7F0C90642469D26B008E5C03 /* CaviarDreams.ttf in Resources */,
 				7F0F46B924614CCB00762394 /* Sweety Strawberry.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F88D5BD2456D987003FBFCE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F88D5C82456D987003FBFCE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,67 +395,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Adopt-A-Dog/Pods-Adopt-A-Dog-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8034F2D6C3D86BAF80DFC1C4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Adopt-A-Dog-Adopt-A-DogUITests/Pods-Adopt-A-Dog-Adopt-A-DogUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Adopt-A-Dog-Adopt-A-DogUITests/Pods-Adopt-A-Dog-Adopt-A-DogUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Adopt-A-Dog-Adopt-A-DogUITests/Pods-Adopt-A-Dog-Adopt-A-DogUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9060ADDFBB41ACF6D26E0DBB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Adopt-A-DogTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B88D964D169748C6656B7561 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Adopt-A-Dog-Adopt-A-DogUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -548,8 +403,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F15C2272463FB3F009619A2 /* MainTabBarViewController.swift in Sources */,
+				7FEDA75F2497811D00CE371A /* EditDogViewController.swift in Sources */,
 				7FAF596B248670380012BDE7 /* DetailsView.swift in Sources */,
 				7F0C905C246973E3008E5C03 /* Colors.swift in Sources */,
+				7FEDA7612497813C00CE371A /* EditDogView.swift in Sources */,
 				7F15C2232463F380009619A2 /* FavoritesViewController.swift in Sources */,
 				7F15C22E24645524009619A2 /* DogCell.swift in Sources */,
 				7FEFFDE924618EF2009EA55B /* SignupViewController.swift in Sources */,
@@ -583,34 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F88D5BB2456D987003FBFCE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F88D5C62456D987003FBFCE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7F88D5C12456D987003FBFCE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F88D5A52456D97E003FBFCE /* Adopt-A-Dog */;
-			targetProxy = 7F88D5C02456D987003FBFCE /* PBXContainerItemProxy */;
-		};
-		7F88D5CC2456D987003FBFCE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F88D5A52456D97E003FBFCE /* Adopt-A-Dog */;
-			targetProxy = 7F88D5CB2456D987003FBFCE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7F88D5B72456D987003FBFCE /* LaunchScreen.storyboard */ = {
@@ -776,94 +606,6 @@
 			};
 			name = Release;
 		};
-		7F88D5D72456D987003FBFCE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 802ABF4B1FD699625DEBE513 /* Pods-Adopt-A-DogTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q47BYYY43;
-				INFOPLIST_FILE = "Adopt-A-DogTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "katlaeva.Adopt-A-DogTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adopt-A-Dog.app/Adopt-A-Dog";
-			};
-			name = Debug;
-		};
-		7F88D5D82456D987003FBFCE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0830CE4827FB3FD11CF60BEC /* Pods-Adopt-A-DogTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q47BYYY43;
-				INFOPLIST_FILE = "Adopt-A-DogTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "katlaeva.Adopt-A-DogTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adopt-A-Dog.app/Adopt-A-Dog";
-			};
-			name = Release;
-		};
-		7F88D5DA2456D987003FBFCE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5182E319A26EDFBE76BD4AFB /* Pods-Adopt-A-Dog-Adopt-A-DogUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q47BYYY43;
-				INFOPLIST_FILE = "Adopt-A-DogUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "katlaeva.Adopt-A-DogUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Adopt-A-Dog";
-			};
-			name = Debug;
-		};
-		7F88D5DB2456D987003FBFCE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36DDCFFCBCBE9D4D21A62A1F /* Pods-Adopt-A-Dog-Adopt-A-DogUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q47BYYY43;
-				INFOPLIST_FILE = "Adopt-A-DogUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "katlaeva.Adopt-A-DogUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Adopt-A-Dog";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -881,24 +623,6 @@
 			buildConfigurations = (
 				7F88D5D42456D987003FBFCE /* Debug */,
 				7F88D5D52456D987003FBFCE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F88D5D62456D987003FBFCE /* Build configuration list for PBXNativeTarget "Adopt-A-DogTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F88D5D72456D987003FBFCE /* Debug */,
-				7F88D5D82456D987003FBFCE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F88D5D92456D987003FBFCE /* Build configuration list for PBXNativeTarget "Adopt-A-DogUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F88D5DA2456D987003FBFCE /* Debug */,
-				7F88D5DB2456D987003FBFCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -13,33 +13,45 @@ class UsersModel {
     
     var userListener: (()-> Void)?
     var userList: [User] = []
+    var currentUserList: [User] = []
+    var userDogRef = ""
+    var usersFavoriteDogsList: [String] = []
     
     init() {
         
     }
     
     func getCurrentUserData() {
-    let db = Firestore.firestore()
-    
-    db.collection(ConstantForDatabase.userCollection).addSnapshotListener { (document, error) in
-        if error != nil {
-            print(error?.localizedDescription as Any)
-        } else {
-            var userList: [User] = []
-            for field in document!.documents {
-                var user = User()
+        let db = Firestore.firestore()
+        let currentUserUid = Auth.auth().currentUser?.uid
+        
+        db.collection(ConstantForDatabase.userCollection).addSnapshotListener { (document, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            } else {
+                var userList: [User] = []
+                var currentUserList: [User] = []
                 
-                user.firstName = field["first_name"]as?String
-                user.lastName = field["last_name"]as?String
-                user.phoneNr = field["phone_number"]as?String
-                user.userUid = field["uid"]as?String
-    
-                    userList.append(user)
+                for field in document!.documents {
+                    var user = User()
+                    
+                    user.firstName = field["first_name"]as?String
+                    user.lastName = field["last_name"]as?String
+                    user.phoneNr = field["phone_number"]as?String
+                    user.userUid = field["uid"]as?String
+                    
+                    if user.userUid == currentUserUid {
+                        currentUserList.append(user)
+                        
+                    }else {
+                        userList.append(user)
+                    }
                 }
-            DispatchQueue.main.async {
-                self.userList = userList
-                self.userListener?()
-              }
+                DispatchQueue.main.async {
+                    self.userList = userList
+                    self.currentUserList = currentUserList
+                    self.userListener?()
+                }
             }
         }
     }

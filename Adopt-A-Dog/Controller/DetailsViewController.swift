@@ -7,11 +7,15 @@
 //
 import Foundation
 import UIKit
+import Firebase
 
 class DetailsViewController: UIViewController {
     
     let detailsView = DetailsView()
-    let dog: Dog
+    let defaults = UserDefaults.standard
+    var dog: Dog
+    var dogDocRef = ""
+    var favoritesList: [String] = []
     
     init(dog: Dog) {
         self.dog = dog
@@ -34,7 +38,7 @@ class DetailsViewController: UIViewController {
     func backToHomeVC() {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     func setupView() {
         view.addSubview(detailsView)
     }
@@ -49,12 +53,18 @@ class DetailsViewController: UIViewController {
         detailsView.dogBreedLabel.text = "Breed: \(dog.dogBreed ?? "Unknown")"
         detailsView.moreInfoTextView.text = dog.dogInfo
         detailsView.dogImage.image = dog.dogImage
+        self.dogDocRef = dog.dogId!
+        if dog.isFavorite == true {
+            detailsView.favoritesButton.setImage(#imageLiteral(resourceName: "favoritesPink"), for: .normal)
+        } else {
+            detailsView.favoritesButton.setImage(#imageLiteral(resourceName: "favorites32"), for: .normal)
+        }
     }
     
     func configureNavBar() {
         let navBar = UINavigationBar()
         navBar.backgroundColor = Color.lightGreen()
-        let backButton = UIBarButtonItem(title: Title.back, style: .plain, target: self, action: #selector(backToHomeVC))
+        let backButton = UIBarButtonItem(title: Title.back , style: .plain, target: self, action: #selector(backToHomeVC))
         navigationItem.backBarButtonItem = backButton
     }
 }

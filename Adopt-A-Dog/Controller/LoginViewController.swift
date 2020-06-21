@@ -21,33 +21,34 @@ class LoginViewController: UIViewController {
     }
     
     //email with a password is hardcoded for the purpous of teacher and censor to be able to log in if needed.
-     @objc
-         func loginButtonTapped() {
-
-    //         guard let email = emailTextField.text, let password = passwordTextField.text else {
-    //             return
-    //         }
-    //         let validEmail = Validation.isEmailValid(email)
-    //         if (validEmail == false) {
-    //             Validation.showError(errorLabel, "email not valid")
-    //             return
-    //         }
-            Auth.auth().signIn(withEmail: "kh@test.com", password: "Tester123*") { (result, error) in
-                 if error != nil {
-                    Validation.showError(self.loginView.errorLabel, ErrorMessage.incorrectEmailOrPassword)
-                 }
-                 else {
-                     self.transitionToHome()
-                 }
-             }
-         }
-
-        @objc
-        func signupButtonTapped() {
-            let signupVC = SignupViewController()
-            signupVC.modalPresentationStyle = .fullScreen
-            self.present(signupVC, animated: true, completion: nil)
+    //email: "harpa14@test.com" password: "Tester1234*"
+    @objc
+    func loginButtonTapped() {
+        
+        guard let email = loginView.emailTextField.text, let password = loginView.passwordTextField.text else {
+            return
         }
+        let validEmail = Validation.isEmailValid(email)
+        if (validEmail == false) {
+            Validation.showError(loginView.errorLabel, "email not valid")
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                Validation.showError(self.loginView.errorLabel, ErrorMessage.incorrectEmailOrPassword)
+            }
+            else {
+                self.transitionToHome()
+            }
+        }
+    }
+    
+    @objc
+    func signupButtonTapped() {
+        let signupVC = SignupViewController()
+        signupVC.modalPresentationStyle = .fullScreen
+        self.present(signupVC, animated: true, completion: nil)
+    }
     
     func setupView() {
         view.addSubview(loginView)

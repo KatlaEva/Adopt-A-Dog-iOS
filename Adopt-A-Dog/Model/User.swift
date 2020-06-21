@@ -16,6 +16,7 @@ struct User {
     var email: String?
     var password: String?
     var phoneNr: String?
+    var favorites: [String]?
 }
     
 

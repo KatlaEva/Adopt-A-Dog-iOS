@@ -20,14 +20,15 @@ class MyDogsViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         configureNavBar()
-        showCurrentUsersDogs()
         setTableViewDelegates()
         configureTableView()
         setupLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         isTableViewEmpty()
+        showCurrentUsersDogs()
     }
     
     @objc
@@ -42,8 +43,8 @@ class MyDogsViewController: UIViewController {
             self.tableView.reloadData()
         }
         dogsModel.getAllDogs()
-                    }
-
+    }
+    
     func setupView() {
         view.addSubview(myDogsView)
         myDogsView.addSubview(tableView)
@@ -69,8 +70,9 @@ class MyDogsViewController: UIViewController {
     func isTableViewEmpty() {
         if dogsModel.currentUsersDogs.count == 0 {
             tableView.backgroundView = myDogsView.noDogsLabel
+            //            myDogsView.noDogsLabel.isHidden = false
         }else {
-            tableView.backgroundView = myDogsView.emptyDogsLabel
+            myDogsView.noDogsLabel.isHidden = true
         }
     }
     
@@ -90,7 +92,7 @@ extension MyDogsViewController: UITableViewDelegate, UITableViewDataSource {
         let dog = dogsModel.currentUsersDogs[indexPath.row]
         cell.setDog(dog: dog)
         return cell
-        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -122,7 +124,15 @@ extension MyDogsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let dog = dogsModel.currentUsersDogs[indexPath.row]
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
+            let editVC = EditDogViewController(dog: dog)
+            editVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(editVC, animated: true)
+        }
+        edit.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [edit])
+    }
 }
-
-
-

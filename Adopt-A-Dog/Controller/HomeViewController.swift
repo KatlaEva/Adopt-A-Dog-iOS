@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     let dogsModel = DogsModel()
     let tableView = UITableView()
     let dogCell = DogCell()
+    var dog = Dog()
     
     //Search Bar elements
     let searchController = UISearchController(searchResultsController: nil)
@@ -22,9 +23,9 @@ class HomeViewController: UIViewController {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+        return searchController.isActive && !isSearchBarEmpty
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -42,7 +43,7 @@ class HomeViewController: UIViewController {
     
     func setNavigationbar() {
         let navBar =  navigationController?.navigationBar
-        title = Title.appName
+        self.navigationItem.title = Title.appName
         navBar?.tintColor = Color.lightGreen()
         navBar?.titleTextAttributes = [NSAttributedString.Key.font: UIFont.Font.strawberry(size: 22)]
     }
@@ -54,7 +55,6 @@ class HomeViewController: UIViewController {
         dogsModel.getAllDogs()
     }
     
-
     func filterContentForSearchText(_ searchText: String,
                                     category: Dog? = nil) {
         filteredDogs = dogsModel.dogs.filter { (dog: Dog) -> Bool in
@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
         }
         tableView.reloadData()
     }
-
+    
     func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -83,10 +83,11 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
     }
 }
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
-           return filteredDogs.count
+            return filteredDogs.count
         }
         return dogsModel.dogs.count
     }
@@ -114,7 +115,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    func tableView( _ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) ->   UISwipeActionsConfiguration? {
+        let dog = dogsModel.dogs[indexPath.row]
+        let favoriteDog = dog.isFavorite
+        
+        let favoriteAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
+            
+            self.dogsModel.dogs[indexPath.row].isFavorite = !self.dogsModel.dogs[indexPath.row].isFavorite
+            
+            completion(true)
+        }
+        
+        favoriteAction.image = favoriteDog ? #imageLiteral(resourceName: "favoritesPink") : #imageLiteral(resourceName: "favorites32")
+        favoriteAction.backgroundColor = Color.lightGreen()
+        
+        return UISwipeActionsConfiguration(actions: [favoriteAction])
+    }
 }
+
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar

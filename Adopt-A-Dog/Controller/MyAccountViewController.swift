@@ -12,13 +12,15 @@ import Firebase
 class MyAccountViewController: UIViewController {
 
     let myAccountView = MyAccountView()
-
+    let userModel = UsersModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupLayout()
         configureNavBar()
         setupTargets()
+        userModel.getCurrentUserData()
     }
     
     @objc
@@ -30,7 +32,8 @@ class MyAccountViewController: UIViewController {
     
     @objc
     func contactInformationTapped() {
-        let contactVC = ContactInformationViewController()
+        guard let user = userModel.currentUserList.first else {return}
+        let contactVC = ContactInformationViewController(user: user)
         modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(contactVC, animated: true)
     }

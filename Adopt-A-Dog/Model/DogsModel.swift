@@ -14,6 +14,7 @@ class DogsModel {
     var dogsListener: (() -> Void)?
     var dogs: [Dog] = []
     var currentUsersDogs: [Dog] = []
+    var defaults = UserDefaults.standard
     
     init() {
     }
@@ -54,7 +55,7 @@ class DogsModel {
                     if dog.dogUserUid == currentUserUid {
                         dogs.append(dog)
                         currentUsersDogs.append(dog)
-                    }else {
+                    } else {
                         dogs.append(dog)
                     }
                 }

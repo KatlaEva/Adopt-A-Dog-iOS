@@ -36,10 +36,6 @@ extension UIView {
         layer.cornerRadius = radius
         clipsToBounds = true
     }
-    func circleCorner() {
-        superview?.layoutIfNeeded()
-        setCorner(radius: frame.height / 2)
-    }
 }
 
 

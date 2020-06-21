@@ -43,6 +43,7 @@ struct Title {
     static let breed = "Breed"
     static let writeAbout = "Write about your dog here..."
     static let save = "Save"
+    static let edit = "Save changes"
     static let chooseFromLibrary = "Choose from library"
     static let newPhoto = "Take a new photo"
     static let cancel = "Cancel"

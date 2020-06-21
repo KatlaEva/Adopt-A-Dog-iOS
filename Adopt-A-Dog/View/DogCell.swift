@@ -17,7 +17,6 @@ class DogCell: UITableViewCell {
         this.translatesAutoresizingMaskIntoConstraints = false
         this.backgroundColor = Color.darkGreen()
         this.layer.cornerRadius = 20.0
-//        this.accessibilityScroll(.up)
         return this
     }()
     
@@ -104,7 +103,5 @@ class DogCell: UITableViewCell {
         dogAge.text = "Age: \(dog.dogAge ?? "No age")"
         dogRace.text = "Breed: \(dog.dogBreed ?? "No breed")"
         dogImage.image = dog.dogImage
-        
     }
-
 }

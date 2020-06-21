@@ -48,6 +48,16 @@
                ReferencedContainer = "container:Adopt-A-Dog.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7FEDA7532493B1E500CE371A"
+               BuildableName = "Adopt-A-DogTests2.xctest"
+               BlueprintName = "Adopt-A-DogTests2"
+               ReferencedContainer = "container:Adopt-A-Dog.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

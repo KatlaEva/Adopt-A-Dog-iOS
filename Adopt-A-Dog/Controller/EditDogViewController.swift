@@ -1,8 +1,8 @@
 //
-//  AddDogViewController.swift
+//  EditDogViewController.swift
 //  Adopt-A-Dog
 //
-//  Created by Þórkatla Eva Víkingsdóttir on 13/05/2020.
+//  Created by Þórkatla Eva Víkingsdóttir on 15/06/2020.
 //  Copyright © 2020 Þórkatla Eva Víkingsdóttir. All rights reserved.
 //
 
@@ -10,17 +10,28 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-
-class AddDogViewController: UIViewController{
+class EditDogViewController: UIViewController {
     
-    let addDogView = AddDogView()
-    var dogRef = ""
+    let editDogView = EditDogView()
+    let dogModel = DogsModel()
+    let dog: Dog
+    var dogDocRef = ""
+    
+    init(dog: Dog) {
+        self.dog = dog
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupLayout()
         setupTargets()
+        setDog(dog: dog)
     }
     
     @objc
@@ -29,9 +40,11 @@ class AddDogViewController: UIViewController{
     }
     
     @objc
-    func saveButtonTapped() {
-        print("Save button tapped!")
-        guard let imageSelected = addDogView.dogImage.image else {
+    func editButtonTapped() {
+        dogModel.currentUsersDogs = []
+        
+        print("Edit button tapped!")
+        guard let imageSelected = editDogView.dogImage.image else {
             print("No image found")
             return
         }
@@ -40,15 +53,15 @@ class AddDogViewController: UIViewController{
         }
         let db = Firestore.firestore()
         
-        let dogName = addDogView.dogNameTextField.text
-        let dogAge = addDogView.dogAgeTextField.text
-        let dogBreed = addDogView.dogBreedTextField.text
-        let dogInfo = addDogView.dogInfoTextField.text
-        let dogDoc = db.collection(ConstantForDatabase.dogCollection).document()
+        let dogName = editDogView.dogNameTextField.text
+        let dogAge = editDogView.dogAgeTextField.text
+        let dogBreed = editDogView.dogBreedTextField.text
+        let dogInfo = editDogView.dogInfoTextField.text
         let currentUser = Auth.auth().currentUser?.uid
+        let currentDog = db.collection(ConstantForDatabase.dogCollection).document(self.dogDocRef)
         
         let storageRef = Storage.storage().reference(forURL: ConstantForDatabase.storageURL)
-        let storageDogImageRef = storageRef.child(ConstantForDatabase.dogImage).child("\(dogDoc.documentID)")
+        let storageDogImageRef = storageRef.child(ConstantForDatabase.dogImage).child(dogName!)
         
         let metadata = StorageMetadata()
         metadata.contentType = ConstantForDatabase.imageTypeJPG
@@ -62,7 +75,8 @@ class AddDogViewController: UIViewController{
                 if let metaImageUrl = url?.absoluteString {
                     print(metaImageUrl)
                     
-                    dogDoc.setData(["dog_name" : dogName as Any, "dog_age" : dogAge as Any, "dog_breed" : dogBreed as Any, "dog_info" : dogInfo as Any, "dog_id" : dogDoc.documentID, "user_ref" : currentUser as Any, "meta_image_url": metaImageUrl]) { (error) in
+                    
+                    currentDog.updateData(["dog_name" : dogName as Any, "dog_age" : dogAge as Any, "dog_breed" : dogBreed as Any, "dog_info" : dogInfo as Any, "user_ref" : currentUser as Any, "meta_image_url": metaImageUrl]) { (error) in
                         
                         if error != nil {
                             print(error!.localizedDescription)
@@ -75,10 +89,10 @@ class AddDogViewController: UIViewController{
     }
     
     func setupView() {
-        view.addSubview(addDogView)
+        view.addSubview(editDogView)
     }
     func setupLayout() {
-        addDogView.pin(to: view)
+        editDogView.pin(to: view)
     }
     
     func transitionToHome(){
@@ -88,12 +102,21 @@ class AddDogViewController: UIViewController{
     }
     
     func setupTargets() {
-        addDogView.chooseImageButton.addTarget(self, action: #selector(chooseImageButtonTapped), for: .touchUpInside)
-        addDogView.addDogSaveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        editDogView.chooseImageButton.addTarget(self, action: #selector(chooseImageButtonTapped), for: .touchUpInside)
+        editDogView.editDogButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+    }
+    
+    func setDog(dog:Dog) {
+        editDogView.dogNameTextField.text = dog.dogName
+        editDogView.dogAgeTextField.text = dog.dogAge
+        editDogView.dogBreedTextField.text = dog.dogBreed
+        editDogView.dogInfoTextField.text = dog.dogInfo
+        editDogView.dogImage.image = dog.dogImage
+        self.dogDocRef = dog.dogId!
     }
 }
 
-extension AddDogViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension EditDogViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {
         
@@ -120,10 +143,11 @@ extension AddDogViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            addDogView.dogImage.image = editedImage
+            editDogView.dogImage.image = editedImage
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            addDogView.dogImage.image = originalImage
+            editDogView.dogImage.image = originalImage
         }
         dismiss(animated: true, completion: nil)
     }
 }
+

@@ -23,12 +23,7 @@ class MyDogsView: UIView {
     }()
     let emptyDogsLabel: UILabel = {
         let this = UILabel()
-        this.translatesAutoresizingMaskIntoConstraints = false
-        this.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        this.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        this.text = " "
-        this.font = UIFont.Font.caviarDreamsBoldItalic(size: 28)
-        this.numberOfLines = 0
+        this.isHidden = true
         return this
     }()
     
@@ -46,14 +41,13 @@ class MyDogsView: UIView {
         self.backgroundColor = Color.lightGreen()
         self.addSubview(noDogsLabel)
         self.addSubview(emptyDogsLabel)
-        }
-        
-        func setupLayout() {
-            NSLayoutConstraint.activate([
-                
-                noDogsLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                noDogsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            ])
-        }
+    }
     
+    func setupLayout() {
+        NSLayoutConstraint.activate([
+            
+            noDogsLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            noDogsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        ])
+    }
 }
