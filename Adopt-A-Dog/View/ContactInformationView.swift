@@ -97,36 +97,36 @@ class ContactInformationView: UIView {
     }
     
     func setupView() {
-           self.addSubview(topLabel)
-       }
-       
-       func setupLayout() {
-           
-           let stack: UIStackView = {
-               let this = UIStackView(arrangedSubviews: [firstNameTextField, lastNameTextField, emailTextField, phoneNumberTextField, errorLabel, saveButton])
-               this.translatesAutoresizingMaskIntoConstraints = false
-               this.axis = .vertical
-               this.distribution = .fill
-               this.alignment = .center
-               this.spacing = 10
-               return this
-           }()
-           self.addSubview(stack)
-           
-           NSLayoutConstraint.activate([
-
-               topLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-               topLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-               
-               stack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-               stack.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 20),
-           ])
-       }
-       
-       func styleElements() {
-           CustomTextFields.styleTextField(firstNameTextField)
-           CustomTextFields.styleTextField(lastNameTextField)
-           CustomTextFields.styleTextField(emailTextField)
-           CustomTextFields.styleTextField(phoneNumberTextField)
-       }
+        self.addSubview(topLabel)
+    }
+    
+    func setupLayout() {
+        
+        let stack: UIStackView = {
+            let this = UIStackView(arrangedSubviews: [firstNameTextField, lastNameTextField, emailTextField, phoneNumberTextField, errorLabel, saveButton])
+            this.translatesAutoresizingMaskIntoConstraints = false
+            this.axis = .vertical
+            this.distribution = .fill
+            this.alignment = .center
+            this.spacing = 10
+            return this
+        }()
+        self.addSubview(stack)
+        
+        NSLayoutConstraint.activate([
+            
+            topLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            topLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+            
+            stack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stack.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 20),
+        ])
+    }
+    
+    func styleElements() {
+        CustomTextFields.styleTextField(firstNameTextField)
+        CustomTextFields.styleTextField(lastNameTextField)
+        CustomTextFields.styleTextField(emailTextField)
+        CustomTextFields.styleTextField(phoneNumberTextField)
+    }
 }

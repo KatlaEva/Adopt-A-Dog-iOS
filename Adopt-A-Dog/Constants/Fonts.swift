@@ -13,29 +13,29 @@ extension UIFont {
     struct Font {
         static func strawberry(size: CGFloat) -> UIFont {
             let font = UIFont(name: "Sweety Strawberry", size: size)!
-
+            
             return UIFontMetrics.default.scaledFont(for: font)
-
+            
         }
         static func caviarDreams(size: CGFloat) -> UIFont {
             let font = UIFont(name: "CaviarDreams", size: size)!
-
+            
             return UIFontMetrics.default.scaledFont(for: font)
         }
         
         static func caviarDreamsBold(size: CGFloat) -> UIFont {
             let font = UIFont(name: "CaviarDreams-Bold", size: size)!
-
+            
             return UIFontMetrics.default.scaledFont(for: font)
         }
         static func caviarDreamsBoldItalic(size: CGFloat) -> UIFont {
             let font = UIFont(name: "CaviarDreams-BoldItalic", size: size)!
-
+            
             return UIFontMetrics.default.scaledFont(for: font)
         }
         static func caviarDreamsItalic(size: CGFloat) -> UIFont {
             let font = UIFont(name: "CaviarDreams-Italic", size: size)!
-
+            
             return UIFontMetrics.default.scaledFont(for: font)
         }
     }

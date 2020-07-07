@@ -137,7 +137,7 @@ class SignupView: UIView {
         self.addSubview(stack)
         
         NSLayoutConstraint.activate([
-
+            
             appNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             appNameLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
             
@@ -158,5 +158,4 @@ class SignupView: UIView {
         CustomTextFields.styleTextField(emailTextField)
         CustomTextFields.styleTextField(passwordTextField)
     }
-    
 }

@@ -98,7 +98,7 @@ class MyAccountView: UIView {
             
             myDogsButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             myDogsButton.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 50),
-
+            
             myTalesButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             myTalesButton.topAnchor.constraint(equalTo: myDogsButton.bottomAnchor, constant: 20),
             
@@ -106,5 +106,4 @@ class MyAccountView: UIView {
             contactInformationButton.topAnchor.constraint(equalTo: myTalesButton.bottomAnchor, constant: 20),
         ])
     }
-    
 }

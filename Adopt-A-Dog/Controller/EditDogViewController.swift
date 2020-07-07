@@ -61,14 +61,14 @@ class EditDogViewController: UIViewController {
         let currentDog = db.collection(ConstantForDatabase.dogCollection).document(self.dogDocRef)
         
         let storageRef = Storage.storage().reference(forURL: ConstantForDatabase.storageURL)
-        let storageDogImageRef = storageRef.child(ConstantForDatabase.dogImage).child(dogName!)
+        let storageDogImageRef = storageRef.child(ConstantForDatabase.dogImage).child("\(currentDog)")
         
         let metadata = StorageMetadata()
         metadata.contentType = ConstantForDatabase.imageTypeJPG
         storageDogImageRef.putData(imageData, metadata: metadata, completion: {
             (StorageMetadata, error) in
             if error != nil {
-                print(error?.localizedDescription as Any)
+                print(error?.localizedDescription as Any) 
                 return
             }
             storageDogImageRef.downloadURL { (url, error) in
